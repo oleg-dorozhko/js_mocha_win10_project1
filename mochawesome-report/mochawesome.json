@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-06-27T23:51:33.828Z",
+    "end": "2021-06-27T23:51:40.080Z",
+    "duration": 6252,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a525e6e7-5265-45b5-8d4f-e6676b8c6ac2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+          "title": "Pecode Login Page Test Suite",
+          "fullFile": "c:\\Users\\1\\home\\js mocha\\project3\\test\\test.js",
+          "file": "\\test\\test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Pecode Login Page Test Suite\"",
+              "fullTitle": "Pecode Login Page Test Suite \"before all\" hook in \"Pecode Login Page Test Suite\"",
+              "timedOut": false,
+              "duration": 19,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = require('./driver').getDriver();\ndone();",
+              "err": {},
+              "uuid": "2cae5011-7585-4ef7-bc3f-df5cafdebd49",
+              "parentUUID": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Pecode Login Page Test Suite\"",
+              "fullTitle": "Pecode Login Page Test Suite \"after all\" hook in \"Pecode Login Page Test Suite\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(driver)\n  driver.quit();\ndone();",
+              "err": {},
+              "uuid": "cae10f1a-0100-45b0-8602-16bc37440bf0",
+              "parentUUID": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should display error message for wrong password after logging",
+              "fullTitle": "Pecode Login Page Test Suite should display error message for wrong password after logging",
+              "timedOut": false,
+              "duration": 4208,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n\t\t\n\t\tvar pecodeLoginPage = new PecodeLoginPage(driver);\n\t\t\n\t\tpecodeLoginPage.open().then( function() {\n\t\t\t \n\t\t\t\tpecodeLoginPage.typeLogin(process.env.LOGIN).then( function() {\n\t\t\t\t\t\n\t\t\t\t \n\t\t\t\t\t\tpecodeLoginPage.typePassword(process.env.PASSWORD).then( function() {\n\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\tpecodeLoginPage.clickLoginButton().then( function() {\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tvar pecodeResultPage = new PecodeResultPage(driver);\n\t\t\t\t\t\t\t\t\t\t\tpecodeResultPage.getPasswordHelpBlockMessage().then( function(message){\n\t\t\t\t\t\t\t\t\t\t\t\t//try\n\t\t\t\t\t\t\t\t\t\t\t\t//{\n\t\t\t\t\t\t\t\t\t\t\t\tassert.equal(message.length, 39);\n\t\t\t\t\t\t\t\t\t\t\t\texpect(message).to.equal(\"The password you entered was not valid.\");\n\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\t//catch(exc) {\n\t\t\t\t\t\t\t\t\t\t\t\t//\tconsole.log(exc);\n\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\tdone();\n\t\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t \n\t\t\t\t\t\t});\n\t\t\t\t\t \n\t\t\t\t});\n\t\t\t \n\t\t});\n\t\n\t}\n\tcatch(exc) {\n\t\tconsole.log(exc);\n\t}\n\tfinally{\n\t\t \n\t}",
+              "err": {},
+              "uuid": "9bfbed4c-2f0f-4ada-8be7-a6629e95a9b1",
+              "parentUUID": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fails cause of unsuccesfull login",
+              "fullTitle": "Pecode Login Page Test Suite should fails cause of unsuccesfull login",
+              "timedOut": false,
+              "duration": 1017,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "try {\n\t\t\n\t\tvar pecodeLoginPage = new PecodeLoginPage(driver);\n\t\t\n\t\tpecodeLoginPage.open().then( function() {\n\t\t\t \n\t\t\t\tpecodeLoginPage.typeLogin(process.env.LOGIN).then( function() {\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\tpecodeLoginPage.typePassword(process.env.PASSWORD+\"1\").then( function() {\n\t\t\t\t\t\n\t\t\t\t\t\t\t\tpecodeLoginPage.clickLoginButton().then( function() {\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tvar pecodeResultPage = new PecodeResultPage(driver);\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tpecodeResultPage.getPasswordHelpBlockMessage().then( function(message){\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t//try\n\t\t\t\t\t\t\t\t\t\t\t\t//{\n\t\t\t\t\t\t\t\t\t\t\t\tassert.equal(message.length, 39);\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\texpect(message).to.equal(\"The password you entered was not valid.\");\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\t//catch(exc) {\n\t\t\t\t\t\t\t\t\t\t\t\t//\tconsole.log(exc);\n\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\tdone(new Error(\"Login is unsuccessful\")); //if we got help-block message - login unsuccesfull\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\n\t\t\t\t\t\t});\n\t\t\t\t\t\n\t\t\t\t});\n\t\t\t \n\t\t});\n\t\n\t}\n\tcatch(exc) {\n\t\tconsole.log(exc);\n\t}\n\tfinally{\n\n\t}",
+              "err": {
+                "message": "Error: Login is unsuccessful",
+                "estack": "Error: Login is unsuccessful\n    at c:\\Users\\1\\home\\js mocha\\project3\\test\\test.js:109:18\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)",
+                "diff": null
+              },
+              "uuid": "9cd86315-e6fd-48bf-9878-739d301de574",
+              "parentUUID": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show help-block message when username is empty",
+              "fullTitle": "Pecode Login Page Test Suite should show help-block message when username is empty",
+              "timedOut": false,
+              "duration": 889,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "try {\n\t\t\n\t\tvar pecodeLoginPage = new PecodeLoginPage(driver);\n\t\t\n\t\tpecodeLoginPage.open().then( function() {\n\t\t\t \n\t\t\t\tpecodeLoginPage.typeLogin(process.env.SPACE).then( function() {\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\tpecodeLoginPage.typePassword(process.env.PASSWORD+\"1\").then( function() {\n\t\t\t\t\t\n\t\t\t\t\t\t\t\tpecodeLoginPage.clickLoginButton().then( function() {\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tvar pecodeResultPage = new PecodeResultPage(driver);\n\t\t\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\tpecodeResultPage.getUsernameHelpBlockMessage().then( function(message){\n\t\t\t\t\t\t\t\t\t\t\t\t\t//try\n\t\t\t\t\t\t\t\t\t\t\t\t\t//{\n\t\t\t\t\t\t\t\t\t\t\t\t\tassert.equal(message.length, 22);\n\t\t\t\t\t\t\t\t\t\t\t\t\texpect(message).to.equal(\"Please enter username.\");\n\t\t\t\t\t\t\t\t\t\t\t\t\t//expect(true).to.equal(false); //if we got help-block message - login unsuccesfull\n\t\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\t\t//catch(exc) {\n\t\t\t\t\t\t\t\t\t\t\t\t\t//\tconsole.log(exc);\n\t\t\t\t\t\t\t\t\t\t\t\t\t//}\n\t\t\t\t\t\t\t\t\t\t\t\t\tdone();\n\t\t\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\n\t\t\t\t\t\t});\n\t\t\t\t\t\n\t\t\t\t});\n\t\t\t \n\t\t});\n\t\n\t}\n\tcatch(exc) {\n\t\tconsole.log(exc);\n\t}\n\tfinally{\n\n\t}",
+              "err": {},
+              "uuid": "ffe8d73c-890e-4d4f-b9d4-31fc79978e29",
+              "parentUUID": "0009b34b-5ac3-48bb-8a08-5d11a6041b73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9bfbed4c-2f0f-4ada-8be7-a6629e95a9b1",
+            "ffe8d73c-890e-4d4f-b9d4-31fc79978e29"
+          ],
+          "failures": [
+            "9cd86315-e6fd-48bf-9878-739d301de574"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6114,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
